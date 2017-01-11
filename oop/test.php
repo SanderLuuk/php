@@ -20,5 +20,10 @@ print_r($sentence);
 echo '</pre>';
 //show object output
 $sentence->show();
-
+echo '<hr/>';
+//create and object
+$sentence2 = new text ('Hello text by contsruct!');
+echo '<pre>';
+print_r($sentence2);
+echo '</pre>';
 ?>
