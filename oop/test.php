@@ -7,6 +7,7 @@
  */
 // require the object creating and using class
 require_once('text.php');
+require_once('ctext.php');
 //create an object
 $sentence = new text();
 //control object output
@@ -25,6 +26,15 @@ echo '<hr/>';
 $sentence2 = new text ('Hello text by contsruct!');
 echo '<pre>';
 print_r($sentence2);
+echo '</pre>';
+// show object output
+$sentence2->show();
+//create and object
+$sentence3 = new ctext ('Hello text by contsruct!');
+//set object color
+$sentence3->setColor('#ff0000');
+echo '<pre>';
+print_r($sentence3);
 echo '</pre>';
 // show object output
 $sentence2->show();
