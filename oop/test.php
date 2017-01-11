@@ -26,4 +26,6 @@ $sentence2 = new text ('Hello text by contsruct!');
 echo '<pre>';
 print_r($sentence2);
 echo '</pre>';
+// show object output
+$sentence2->show();
 ?>
