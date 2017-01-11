@@ -10,6 +10,10 @@ class text
 {//text class begin
     //class variables = instance variables
     var $str = '';
+    //constructor
+    function __construct($s = ''){
+        $this->setText($s);
+    }// construct
 
     // methods // funktsioonid
     //set text function - paneb funktsioni paika
@@ -18,7 +22,7 @@ class text
     }// setText
     //show text function // näita funktsiooni.
     function show(){
-        echo $this->$str.'<br/>'
+        echo $this->$str.'<br/>';
     } //show
 }// text class end
 ?>

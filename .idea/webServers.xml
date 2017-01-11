@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d35855f2-3bfc-4539-b0ff-01302fac1011" name="kool" url="http://138.68.68.130/~sander.luuk/">
+        <fileTransfer host="138.68.68.130" port="22" rootFolder="/home/sander.luuk/public" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
