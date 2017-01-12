@@ -40,7 +40,7 @@ class template
             $this->readFile($f);
         }
         if($this->content === false){
-            echo 'Ei saanud lugeda faili '.$this->dile.'.<br/>';
+            echo 'Ei saanud lugeda faili '.$this->file.'.<br/>';
             exit;
         }
 
