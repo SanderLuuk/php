@@ -18,11 +18,17 @@ class template
     var $content = false; // template content - now this is empty
 
     //class methods
+    //construct
+    function __construct($f){
+        $this->file = $f;
+        $this->loadFile();
+    //construct
+
     function loadFile(){
         $f = $this->file; //use file name variable
         //if some problem with tmpl directory
-        if (! is_dir(TMPL_DIR)){
-            echo 'Kataloogi' .TMPL_DIR. 'ei ole leitud' <br/>;
+        if (! is_dir (TMPL_DIR)){
+            echo 'Kataloogi'.TMPL_DIR.'ei ole leitud <br/>';
             exit;
         }
         //if we allready in tmpl direcotory - $this->file is 'tmpl/file.html'
@@ -50,3 +56,4 @@ class template
         $this->content = file_get_contents($f);
     }//readFile
 }//class end
+?>
