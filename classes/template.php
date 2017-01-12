@@ -19,15 +19,16 @@ class template
 
     //class methods
     //construct
-    function __construct($f){
+    function __construct($f)
+    {
         $this->file = $f;
         $this->loadFile();
-    //construct
+    }//construct
 
     function loadFile(){
         $f = $this->file; //use file name variable
         //if some problem with tmpl directory
-        if (! is_dir (TMPL_DIR)){
+        if (!is_dir (TMPL_DIR)){
             echo 'Kataloogi'.TMPL_DIR.'ei ole leitud <br/>';
             exit;
         }
