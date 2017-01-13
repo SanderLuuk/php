@@ -16,11 +16,11 @@ class template
     //class vbariables
     var $file =''; //template file name
     var $content = false; // template content - now this is empty
+    var $vars = array(); // table for real values of html template output
 
     //class methods
     //construct
-    function __construct($f)
-    {
+    function __construct($f){
         $this->file = $f;
         $this->loadFile();
     }//construct
@@ -56,5 +56,12 @@ class template
     function readFile($f){
         $this->content = file_get_contents($f);
     }//readFile
+
+    //set up html tempalte elementsd and their real values
+    //$name - template element name
+    //$val - real value for template element
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }
 }//class end
 ?>
