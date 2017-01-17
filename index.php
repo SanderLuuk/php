@@ -26,5 +26,26 @@ $tmpl->set('Content', 'Minu sisu');
 //print_r($tmpl);
 //echo '</pre>';
 
+//output template content set up with real values
 echo $tmpl->parse();
+//import http class
+require_once CLASSES_DIR.'http.php';
+//create andoutput http object
+$http = new http();
+//control http object output - KONTROLL
+echo '<pre>';
+print_r($http);
+echo '</pre>';
+//controll http constants
+echo REMOTE_ADDR.'<br />';
+echo PHP_SELF.'<br />';
+echo SCRIPT_NAME.'<br />';
+echo HTTP_HOST.'<br />';
+//create http data pairs and set up to $http->vars array
+$http->set('kasutaja','sander');
+$http->set('tund','php programmeerimisvahendid');
+//control http-> vars object output
+echo '<pre>';
+print_r($http->vars);
+echo '</pre>';
 ?>

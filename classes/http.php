@@ -9,7 +9,7 @@
 class http
 {//http begin
     //class variables - klassi iseloomustavad omadused
-    var $server array(); //server data - serveri andmed
+    var $server = array(); //server data - serveri andmed
     var $vars = array(); // k6ik andmed mis l2bi http liiguvad - http data
     var $cookie = array(); // küpsiste andmed - cookie data
     //class methods - klassimeetodite defineerimine - vaja ära defineerida ( var'id)
@@ -18,8 +18,7 @@ class http
     function __construct(){
         $this->init();
         $this->initConst();
-
-    }
+    }//__init construct
     //initsialiseerime muutujad - initialize class variables
     function init(){
         $this->server = $_SERVER; //serveri reaalne väärtus .- server real data
@@ -28,12 +27,19 @@ class http
     }//init
     //selleks et linkide hooldusega tegeleda on mul vaja konstante http://php.net/manual/en/reserved.variables.server.php
     //initsialiseerime konstandid mis meil on hiljem vaja ö- initialize class constants
-    function initConst (){
+    function initConst(){
         $var = array('REMOTE_ADDR', 'PHP_SELF','SCRIPT_NAME', 'HTTP_HOST'); // firstones we need for testingself and addr
         foreach($vars as $var){ // vaatan konstandi kaupa kas on defineeritud konstantid
-            if(!defined($var))and isset($this->server[$var])){
+            if(!defined($var) and isset($this->server[$var])){
                 define($var, $this->server[$var]);//selleks et defineerida ytlen selle nime ja mis on konstatniereaalne v22rtus ehk serveri oma v22rtus
             }
         }
-    }
+    }//initCcnst
+    //set up data for http object - pairs element_name => element value
+    function set($name, $val)
+    {
+        //et saaks rakenduse seest poolt teha nt nii et kasutaja on anna ja tund on php kasutamine
+        //var koosneb kahest paarist .. elemendi nimi ja elemendi v22rtus
+        $this->vars[$name] = $val;
+    }//set
 }//http end
