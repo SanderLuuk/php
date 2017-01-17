@@ -70,7 +70,7 @@ class template
         $str = $this->content;
         foreach ($this->vars as $name=>$val){
             $str = str_replace('{'.$name.'}', $val, $str);
-            echo $str.'<hr/>';
+
         }
         //set return
         return $str;

@@ -14,14 +14,17 @@ require_once CLASSES_DIR.'template.php';
 $tmpl = new template('main');
 //add pairs of template element names and real values
 $tmpl->set('Menu', 'Minu Menüü');
-$tmpl->set('Nav_bar', 'Minu navigatsioon');
-$tmpl->set('Lang_bar', 'Minu keeleriba');
+$tmpl->set('title', 'Tiitel');
+$tmpl->set('Nav-bar', 'Minu navigatsioon');
+$tmpl->set('Lang-bar', 'Minu keeleriba');
 $tmpl->set('Content', 'Minu sisu');
+
+
 //set upthe file name for template
 //control the content of template object
-echo '<pre>';
-print_r($tmpl);
-echo '</pre>';
+//echo '<pre>';
+//print_r($tmpl);
+//echo '</pre>';
 
 echo $tmpl->parse();
 ?>
