@@ -6,6 +6,11 @@
  * Date: 17.01.2017
  * Time: 12:49
  */
+//useful function
+function fixHtml($val){
+    return htmlentities($val);
+
+}//fix html
 class http
 {//http begin
     //class variables - klassi iseloomustavad omadused
@@ -42,4 +47,8 @@ class http
         //var koosneb kahest paarist .. elemendi nimi ja elemendi v22rtus
         $this->vars[$name] = $val;
     }//set
+    //get element_value by eaccording to the element_name
+    function get($name){
+
+    }
 }//http end
