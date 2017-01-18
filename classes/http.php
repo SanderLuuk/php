@@ -48,7 +48,9 @@ class http
         $this->vars[$name] = $val;
     }//set
     //get element_value by eaccording to the element_name
-    function get($name){
-
+    function get($name, $fix = false){
+       if(isset($this->vars[$name])){
+           if(fix)
+       }
     }
 }//http end
