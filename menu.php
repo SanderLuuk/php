@@ -10,15 +10,36 @@
 //for menu and menu items
 $menu =new template('menu.menu'); //in menu directory is file menu.html menu/menu.html
 $item =new template('menu.item');
+//menu item creation - begin
 //add pairs  of item template element names and real values
 $item->set('name', 'Esimene leht');
 //make link element
 $link = $http->getLink(array('page'=>'first'));
 $item->set('link',$link);
 //control created item output
+//echo '<pre>';
+//print_r($item);
+//echo '</pre>';
+//add menu item top menu
+$menu->set('items',$item->parse()); //v2ljatrykki v6imaldab parse
+//menu item creation - begin
+//
+//menu item creation - begin
+//add pairs  of item template element names and real values
+$item->set('name', 'Teine leht');
+//make link element
+$link = $http->getLink(array('page'=>'second'));
+$item->set('link',$link);
+//control created item output
+//echo '<pre>';
+//print_r($item);
+//echo '</pre>';
+//add menu item top menu
+//control created menu outputs
 echo '<pre>';
-print_r($item);
+print_r($menu);
 echo '</pre>';
-echo $item->parse(); //v2ljatrykki v6imaldab parse
+//output $menu->parse();
+echo $menu->parse();
 
 ?>
