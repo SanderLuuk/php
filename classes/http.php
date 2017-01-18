@@ -28,7 +28,7 @@ class http
     //selleks et linkide hooldusega tegeleda on mul vaja konstante http://php.net/manual/en/reserved.variables.server.php
     //initsialiseerime konstandid mis meil on hiljem vaja ö- initialize class constants
     function initConst(){
-        $var = array('REMOTE_ADDR', 'PHP_SELF','SCRIPT_NAME', 'HTTP_HOST'); // firstones we need for testingself and addr
+        $vars = array('REMOTE_ADDR', 'PHP_SELF','SCRIPT_NAME', 'HTTP_HOST'); // firstones we need for testingself and addr
         foreach($vars as $var){ // vaatan konstandi kaupa kas on defineeritud konstantid
             if(!defined($var) and isset($this->server[$var])){
                 define($var, $this->server[$var]);//selleks et defineerida ytlen selle nime ja mis on konstatniereaalne v22rtus ehk serveri oma v22rtus
