@@ -48,4 +48,14 @@ $http->set('tund','php programmeerimisvahendid');
 echo '<pre>';
 print_r($http->vars);
 echo '</pre>';
+//
+//linkobject testing
+//import linkobjectt class file
+require_once  CLASSES_DIR.'linkobject.php';
+//create linkobject type object
+$linkobject = new linkobject();
+//control linkobject output
+echo '<pre>';
+print_r($linkobject);
+echo '</pre>';
 ?>
