@@ -45,12 +45,13 @@ class http
     {
         //et saaks rakenduse seest poolt teha nt nii et kasutaja on anna ja tund on php kasutamine
         //var koosneb kahest paarist .. elemendi nimi ja elemendi v22rtus
-        $this->vars[$name] = $val;
-    }//set
-    //get element_value by eaccording to the element_name
-    function get($name, $fix = false){
-       if(isset($this->vars[$name])){
-           if(fix)
-       }
-    }
-}//http end
+        if(isset($this->vars[$name])){
+            if($fix){
+                return fixHtml($this->vars[$name]);
+            }
+            return $this->vars[$name];
+        }
+        // if element with such name is not exists
+        return false;
+    }// get
+}// http end

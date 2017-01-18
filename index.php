@@ -9,6 +9,7 @@
 define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
 define('STYLE_DIR','css/');
+define('ACTS_DIR', 'acts/');
 require_once CLASSES_DIR.'template.php';
 //and use it
 //create an empty template object
@@ -70,9 +71,10 @@ $link = $http->getLink(array('kasutaja'=>'anna','parool'=>'qwerty'));
 //import menu file
 //require_once 'menu.php';
 // control http output
-echo '<pre>';
+/*echo '<pre>';
 print_r($http);
 echo '</pre>';
-echo $http->get('act');
+//control element by value
+echo $http->get('act');*/
 
 ?>
