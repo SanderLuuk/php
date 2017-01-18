@@ -34,7 +34,7 @@ require_once CLASSES_DIR.'http.php';
 //import
 require_once CLASSES_DIR.'linkobject.php';
 //create andoutput http object
-$http = new http();
+$http = new linkobject();
 //control http object output - KONTROLL
 echo '<pre>';
 print_r($http);
@@ -44,6 +44,7 @@ echo REMOTE_ADDR.'<br />';
 echo PHP_SELF.'<br />';
 echo SCRIPT_NAME.'<br />';
 echo HTTP_HOST.'<br />';
+echo '<hr />';
 //create http data pairs and set up to $http->vars array
 $http->set('kasutaja','sander');
 $http->set('tund','php programmeerimisvahendid');
@@ -51,16 +52,7 @@ $http->set('tund','php programmeerimisvahendid');
 echo '<pre>';
 print_r($http->vars);
 echo '</pre>';
-//
-//linkobject testing
-//import linkobjectt class file
-require_once  CLASSES_DIR.'linkobject.php';
-//create linkobject type object
-$linkobject = new linkobject();
-//control linkobject output
-echo '<pre>';
-print_r($linkobject);
-echo '</pre>';
+
 //control link creation
 $link = $http->getLink(array('kasutaja'=>'anna','parool'=>'qwerty'));
 echo $link;

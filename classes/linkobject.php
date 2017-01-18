@@ -30,7 +30,7 @@ class linkobject extends http
     }//construct
     //create http data pairs and merge them
     //merge is realized by &$link
-    function addToLink($link,$name, $val){
+    function addToLink(&$link,$name, $val){
         if($link != ''){
             $link .=$this->delim; //    $link = $link.$this->delim;
         }
@@ -46,7 +46,7 @@ class linkobject extends http
         }
         //control, is link not empty - pairs is created
         if($link != ''){
-            $this->baseUrl.'?'.$link; //http://IP/path_to_script.php?name=value
+            $link = $this->baseUrl.'?'.$link; //http://IP/path_to_script.php?name=value
         } else{
             $link = $this->baseUrl;
         }
