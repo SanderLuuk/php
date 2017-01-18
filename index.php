@@ -14,7 +14,17 @@ require_once CLASSES_DIR.'template.php';
 //create an empty template object
 $tmpl = new template('main');
 //add pairs of template element names and real values
-$tmpl->set('Menu', 'Minu Menüü');
+
+//import http class
+require_once CLASSES_DIR.'http.php';
+//import
+require_once CLASSES_DIR.'linkobject.php';
+//create andoutput http object
+$http = new linkobject();
+//control menu
+//import menu file
+require_once 'menu.php';
+$tmpl->set('Menu', $menu->parse());
 $tmpl->set('title', 'Tiitel');
 $tmpl->set('Nav-bar', 'Minu navigatsioon');
 $tmpl->set('Lang-bar', 'Minu keeleriba');
@@ -58,6 +68,6 @@ $link = $http->getLink(array('kasutaja'=>'anna','parool'=>'qwerty'));
 echo $link;
 //control menu
 //import menu file
-require_once 'menu.php';
+//require_once 'menu.php';
 
 ?>

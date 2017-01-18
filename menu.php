@@ -35,11 +35,12 @@ $item->set('link',$link);
 //print_r($item);
 //echo '</pre>';
 //add menu item top menu
+$menu->add('items',$item->parse()); // add another item to menu!
 //control created menu outputs
-echo '<pre>';
+/*echo '<pre>';
 print_r($menu);
-echo '</pre>';
+echo '</pre>';*/
 //output $menu->parse();
-echo $menu->parse();
+//echo $menu->parse();
 
 ?>
