@@ -9,5 +9,7 @@
 $act = $http->get('act');
 echo 'act value = '.$act.'<br />';
 //define act file path according to the act element value
-$fn =
+$fn = ACTS_DIR.str_replace('.','/', $act).'.php';
+//output act file path
+echo $fn.'br />';
 ?>
