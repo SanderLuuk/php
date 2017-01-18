@@ -10,6 +10,12 @@ $act = $http->get('act');
 echo 'act value = '.$act.'<br />';
 //define act file path according to the act element value
 $fn = ACTS_DIR.str_replace('.','/', $act).'.php';
-//output act file path
-echo $fn.'br />';
+//control act file
+if(file_exists($fn) and is_file($fn) and is_readable($fn)){
+    //import act file
+    require_once  $fn;
+} else {
+    //use default fact
+
+}
 ?>
