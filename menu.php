@@ -19,5 +19,6 @@ $item->set('link',$link);
 echo '<pre>';
 print_r($item);
 echo '</pre>';
+echo $item->parse(); //v2ljatrykki v6imaldab parse
 
 ?>
