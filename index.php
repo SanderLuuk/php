@@ -8,6 +8,7 @@
 //create and template object
 define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
+define('STYLE_DIR','css/');
 require_once CLASSES_DIR.'template.php';
 //and use it
 //create an empty template object
@@ -60,4 +61,9 @@ $linkobject = new linkobject();
 echo '<pre>';
 print_r($linkobject);
 echo '</pre>';
+//control linkobject data pair creation
+$link = ''; //empty link for data pairs
+$http->addToLink($link, 'kasutaja', 'anna');
+$http->addToLink($link, 'parool', 'qwerty');
+
 ?>

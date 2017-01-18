@@ -9,7 +9,7 @@
 //useful function for this class
 function fixUrl($val){
     return urlencode($val);
-}/fix url
+}//fix url
 // only for testing
 //import http class
 require_once 'http.php';
@@ -29,7 +29,11 @@ class linkobject extends http
         $this->baseUrl = $this->protocol.HTTP_HOST.SCRIPT_NAME;
     }//construct
     //create http data pairs and merge them
+    //merge is realized by &$link
     function addToLink($link,$name, $val){
+        if($link != ''){
+            $link .=$this->delim; //    $link = $link.$this->delim;
+        }
         //create pair: element_name = element_value
         $link = $link.fixUrl($name).$this->eq.fixUrl($val);
         echo $link;
