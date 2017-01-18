@@ -30,6 +30,8 @@ $tmpl->set('Content', 'Minu sisu');
 echo $tmpl->parse();
 //import http class
 require_once CLASSES_DIR.'http.php';
+//import
+require_once CLASSES_DIR.'linkobject.php';
 //create andoutput http object
 $http = new http();
 //control http object output - KONTROLL
