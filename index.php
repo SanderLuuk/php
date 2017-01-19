@@ -5,6 +5,8 @@
  * Date: 12.01.2017
  * Time: 12:58
  */
+//import comnfiguration
+require_once 'conf.php';
 //create and template object
 define('CLASSES_DIR', 'classes/'); //classes path
 define('TMPL_DIR', 'tmpl/'); // templates path

@@ -45,6 +45,13 @@ class http
     {
         //et saaks rakenduse seest poolt teha nt nii et kasutaja on anna ja tund on php kasutamine
         //var koosneb kahest paarist .. elemendi nimi ja elemendi v22rtus
+             $this->vars[$name]= $val;
+        // if element with such name is not exists
+    }// end set function
+    function get($name)
+    {
+        //et saaks rakenduse seest poolt teha nt nii et kasutaja on anna ja tund on php kasutamine
+        //var koosneb kahest paarist .. elemendi nimi ja elemendi v22rtus
         if(isset($this->vars[$name])){
             if($fix){
                 return fixHtml($this->vars[$name]);
