@@ -80,5 +80,11 @@ echo '</pre>';
 //control element by value
 echo $http->get('act');*/
 require_once  'act.php';
+//control database object
+//crate connection
+$db->connect();
+echo '<pre>';
+print_r($db);
+echo '</pre>';
 
 ?>

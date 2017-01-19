@@ -23,5 +23,6 @@ require_once CLASSES_DIR.'linkobject.php';
 //create and output http object from linkobject class
 $http = new linkobject();
 //create database object
+
 $db = new mysql('localhost','user','parool','dbname');
 ?>
