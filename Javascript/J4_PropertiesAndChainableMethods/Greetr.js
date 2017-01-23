@@ -47,7 +47,7 @@
         greet: function(formal) { // luuakse funktsioon greet mille põhjal v'öjastatakse kas fromaalne tervitus või lihtne tervitus
             var msg;
             
-            // if undefined or null it will be coerced to 'false'
+            // if undefined or null it will be coerced to 'false' kui peaks olema undefined  v null siis saab olema "vale",
             if (formal) {
                 msg = this.formalGreeting();  
             }
@@ -59,12 +59,12 @@
                 console.log(msg);
             }
 
-            // 'this' refers to the calling object at execution time
+            // 'this' refers to the calling object at execution time // this viitab objekti väljakutsumise täitmisele ja teeb meetodi jadas töötavaks vms.
             // makes the method chainable
             return this;
         },
         
-        log: function() {
+        log: function() { // logi funktsioon kus salvestatakse "this" keelevalik ja "this" täisnimi.
             if (console) {
                 console.log(logMessages[this.language] + ': ' + this.fullName()); 
             }
@@ -73,16 +73,16 @@
         },
                             
         setLang: function(lang) {
-            this.language = lang;
+            this.language = lang;  // määratakse keel
                     
-            this.validate();
+            this.validate(); // valideeritakse kui vajutatakse nuppu.
             
             return this;
         }
         
     };
     
-    Greetr.init = function(firstName, lastName, language) {
+    Greetr.init = function(firstName, lastName, language) { // tegelik objekt tehakse siin kutsudes välja self'iga.
         
         var self = this;
         self.firstName = firstName || '';
@@ -91,8 +91,8 @@
         
     }
     
-    Greetr.init.prototype = Greetr.prototype;
+    Greetr.init.prototype = Greetr.prototype; // kasutades prototyypi ei pea kasutama me  "new"'d.
     
-    global.Greetr = global.G$ = Greetr;
+    global.Greetr = global.G$ = Greetr;  //lisatakse Greetr globaalsesse objekti et vähendada trükkimistööd ja mälukasutust.
     
 }(window, jQuery));
