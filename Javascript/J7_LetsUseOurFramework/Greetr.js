@@ -1,4 +1,4 @@
-;(function(global, $) {
+;(function(global, $) { // siin ei kommenteerinud sest kõik mis siin on on ka viiendas. seega siin ma ei komenteerinud.
     
     // 'new' an object
     var Greetr = function(firstName, lastName, language) {
