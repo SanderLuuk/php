@@ -21,6 +21,7 @@ class mysql
         $this->user = $p;
         $this->pass = $p;
         $this->dbname = $dn;
+        $this->connect();
     }//construct
     //connect to database server and use database
     function connect(){
@@ -29,6 +30,23 @@ class mysql
             echo 'Probleem andmebaasi ühendumisega <br />' ;
             exit;
         }
-    }//construct
+    }//connect
+    //querey to database
+    function query($sql){
+        $res = mysqli_query($this->conn, $sql);
+        if($res === FALSE)[
+            echo 'viga päringus <b>'.$sql.'</b><br />';
+            echo mysqli_error().'<br />';
+            exit;
+        }
+        return $res;
+    }//query
+    //query with data result
+    function getArray ($sql){
+       $res =$this->query($sql);
+       $data = array();
+
+
+    }//get array
 }//class end
 ?>

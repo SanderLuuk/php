@@ -19,11 +19,12 @@ require_once CLASSES_DIR.'template.php';
 require_once CLASSES_DIR.'http.php';
 //import
 require_once CLASSES_DIR.'linkobject.php';
+require_once CLASSES_DIR.'mysql.php';
 
 require_once 'db_conf.php';
 //create and output http object from linkobject class
 $http = new linkobject();
 //create database object
 
-$db = new mysql(DBHOST,DBUSER,DBPASS',DBNAME);
+$db = new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
 ?>
