@@ -1,4 +1,4 @@
-(function(global, $) {
+(function(global, $) { // siin dokumendis on kõik sama mis on 5'das. Siin ei teinud seletusi kõrvale enam. ja sama on ka 7'aga .
     
     // 'new' an object
     var Greetr = function(firstName, lastName, language) {
