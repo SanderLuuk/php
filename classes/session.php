@@ -22,6 +22,7 @@ class session
         $this->http = &$http;
         $this->db = &$db;
         $this->sid = $http->get('sid');
+        $this->createSession();
     }//construct
     //create session
         function createSession($user = false){
@@ -37,7 +38,7 @@ class session
             $sid = md5(uniqid(time().mt_rand (1,1000),true));
             //insert data to database
             $sql = 'INSERT INTO session SET'.
-                'sid'.fixDb($sid)', '.
+                'sid'.fixDb($sid).', '.
                 'user_id='.fixDb($user['user_id']).', '.
                 'user_data='.fixDb(serialize($user)).', '.
                 'login_ip='.fixDb(REMOTE_ADDR).', '.
