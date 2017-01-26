@@ -49,5 +49,15 @@ class session
             $this->http->set('sid',$sid);
     }//create session
 
+    //delete session data from atabase
+    function clearSessions(){
+            $sql = 'DELETE FROM session'.
+                'WHERE'.
+                time().' - UNIX_TiMESTAMP(changed) > '.
+                $this->timeout;
+            $this->db->query($sql);
+
+    }//clearSesions
+
 }//class end
 ?>
