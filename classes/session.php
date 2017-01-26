@@ -59,5 +59,26 @@ class session
 
     }//clearSesions
 
+    //controll session
+    function checkSession(){
+        $this->clearSessions();
+        if($this->sid === false and $this->anonymous){
+            $this->createSession();
+        }
+        if($this->sid !== false){
+            //get data aboud this session
+            $sql = 'SELECT * FROM session WHERE '.
+                'sid='.fixDb($this->sid);
+            $res = $this->db->getArray($sql);
+            if($res == false){
+                if($this->anonymous){
+                    $this->createSession();
+                  else{
+                      $this->sid = false;
+                    }
+                }
+            }
+        }
+    }//check sessions
 }//class end
 ?>

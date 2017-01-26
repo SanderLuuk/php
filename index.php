@@ -42,4 +42,7 @@ $db->showHistory();
 echo '<pre>';
 print_r($sess);
 echo '</pre>';
+
+$sess->clearSessions();
+
 ?>

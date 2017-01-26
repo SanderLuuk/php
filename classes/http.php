@@ -56,5 +56,13 @@ class http
         }
         return false;
     }// get
+
+    //delete http data element
+    function del($name){
+        if(isset($this->vars[$name])){
+            unswet($this->vars[$name]);
+        }
+    }
+
 }// http class end
 ?>
