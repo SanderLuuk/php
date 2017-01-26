@@ -9,9 +9,9 @@
 // create menu and item objects
 //for menu and menu items
 $menu = new template('menu.menu'); //in menu directory is file menu.html menu/menu.html
-$item =new template('menu.item');
+$item = new template('menu.item');
 //main meny content query
-$sql = 'SELECT content_id, title from content where '.
+$sql = 'SELECT content_id, title from content where'.
     'parent_id = "0" and show_in_menu = "1"';
 $sql = $sql.'order by sort asc';
 //get menu data from database

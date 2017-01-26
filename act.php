@@ -5,20 +5,14 @@
  * Date: 18.01.2017
  * Time: 14:25
  */
-//get act element value from url
-$act = $http->get('act');
-echo 'act value = '.$act.'<br />';
-//define act file path according to the act element value
-$fn = ACTS_DIR.str_replace('.','/', $act).'.php';
-//control act file
+$act = $http->get('act'); // act value from url
+// create act file path according to act value
+$fn = ACTS_DIR.str_replace('.', '/', $act).'.php';
+// if such act file exists - use it
 if(file_exists($fn) and is_file($fn) and is_readable($fn)){
-    //import act file
-    require_once  $fn;
+    require_once $fn;
 } else {
-    //use default fact
-    //define default act file path
     $fn = ACTS_DIR.DEFAULT_ACT.'.php';
-    //define new value for act element in url
     $http->set('act', DEFAULT_ACT);
     require_once $fn;
 }

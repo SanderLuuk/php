@@ -5,26 +5,22 @@
  * Date: 19.01.2017
  * Time: 12:19
  */
-//framework configuration
-//create and template objects
-$tmpl->set('Menu', $menu->parse());
-$tmpl->set('title', 'Tiitel');
-$tmpl->set('Nav-bar', 'Minu navigatsioon');
-$tmpl->set('Lang-bar', 'Minu keeleriba');
-$tmpl->set('Content', 'Minu sisu');õ
-
-
-require_once CLASSES_DIR.'template.php';
-//import http class
-require_once CLASSES_DIR.'http.php';
-//import
-require_once CLASSES_DIR.'linkobject.php';
-require_once CLASSES_DIR.'mysql.php';
-
+// define constants
+define('CLASSES_DIR', 'classes/');
+define('TMPL_DIR', 'tmpl/');
+define('STYLE_DIR', 'css/');
+define('ACTS_DIR', 'acts/'); // default act directory
+define('DEFAULT_ACT', 'default'); // default act file name
+// import classes
+require_once CLASSES_DIR.'template.php'; // import template class file
+require_once CLASSES_DIR.'http.php'; // import http class file
+require_once CLASSES_DIR.'linkobject.php'; // import linkobject file
+require_once CLASSES_DIR.'mysql.php'; // import database class file
+// import database configuration
 require_once 'db_conf.php';
-//create and output http object from linkobject class
+// objects
+// create linkobject object, because it extends http object
 $http = new linkobject();
-//create database object
-
-$db = new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
+// create database class object with real values
+$db = new mysql(DBHOST, DBUSER, DBPASS, DBNAME);
 ?>
