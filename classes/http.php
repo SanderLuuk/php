@@ -64,5 +64,15 @@ class http
         }
     }
 
-}// http class end
+    function redirect($url=false){
+        global $sess;
+        $sess->flush();
+
+        if($url == false){
+            $url = $this->getLink();
+        }
+        $url = str_replace('&amp;', '&', $url);
+        header('Location;'.$url);
+        exit;
+    }// http class end
 ?>
