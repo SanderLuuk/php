@@ -60,7 +60,7 @@ class http
     //delete http data element
     function del($name){
         if(isset($this->vars[$name])){
-            unswet($this->vars[$name]);
+            unset($this->vars[$name]);
         }
     }
 

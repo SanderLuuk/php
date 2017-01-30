@@ -24,6 +24,7 @@ require_once 'menu.php';
 // end of menu
 $tmpl->set('Nav_bar', 'Minu navigatsioon');
 $tmpl->set('Lang_bar', 'Minu keeleriba');
+$tmpl->set('Nav_bar', $sess->user_data['username']);
 //$tmpl->set('content', 'minu sisu');
 // allow to use default act
 $tmpl->set('content', $http->get('content'));
@@ -36,6 +37,10 @@ $sql = 'SELECT NOW()';
 $res = $db->getArray($sql);
 $sql = 'SELECT NOW()';
 $res = $db->getArray($sql);
+//Session flush id
+$sess->flush();
+
+
 // control query log output
 $db->showHistory();
 //control session output
