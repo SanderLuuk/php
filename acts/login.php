@@ -13,4 +13,5 @@ $form->set('username', $http->get('username', true));
 $link = $http->getLink(array('act' => 'login_do'));
 $form -> set('action', $link);
 $tmpl->set('content', $form->parse());
+
 ?>
