@@ -13,14 +13,16 @@ define('ACTS_DIR', 'acts/'); // default act directory
 define('LIB_DIR','lib/');
 
 define('DEFAULT_ACT', 'default'); // default act file name
-
+// import useful files
+require_once LIB_DIR.'utils.php';
 //user roles
 define('ROLE_NONE', 0);
 define('ROLE_ADMIN', 1);
 define('ROLE_USER', 2);
 
-// import useful files
-require_once LIB_DIR.'utils.php';
+//adding defualt language
+define('DEFAULT_LANG', 'et');
+
 // import classes
 require_once CLASSES_DIR.'template.php'; // import template class file
 require_once CLASSES_DIR.'http.php'; // import http class file

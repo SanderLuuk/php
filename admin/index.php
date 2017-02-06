@@ -1,4 +1,4 @@
 <?php
-header('Location: ../index.php?act=loginä');
+header('Location: ../index.php?act=login');
 exit;
 ?>
