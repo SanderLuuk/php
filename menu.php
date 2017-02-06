@@ -21,7 +21,6 @@ if(ROLE_ID != ROLE_ADMIN) {
 $sql .? ' ORDER BY sort ASC';//get menu data from database
 
 $res = $db->getArray($sql); //create menu items from query result
-
 }
 
 
@@ -35,6 +34,14 @@ if($res != false){
         $menu->add('items', $item->parse());
 
     }
+}
+// if user is logged in to system as an regular user or an admin then we give him/her a chance to log out
+if(USER_ID != ROLE_NONE)
+{
+    $link = $http->getLink(array('act' => 'logout'));
+    $item -> set('link', $link);
+    $item -> set('name', 'Logi välja');
+    $menu -> add('items', $irem->parse());
 }
 $tmpl->set('menu', $menu->parse());
 ?>
