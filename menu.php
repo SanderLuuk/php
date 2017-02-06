@@ -18,10 +18,9 @@ $sql = 'SELECT content_id, title from content where '.
 if(ROLE_ID != ROLE_ADMIN) {
     $sql .= ' AND is_hidden = 0';
 }
-$sql .? ' ORDER BY sort ASC';//get menu data from database
+$sql .= ' ORDER BY sort ASC';//get menu data from database
 
 $res = $db->getArray($sql); //create menu items from query result
-}
 
 
 if($res != false){
