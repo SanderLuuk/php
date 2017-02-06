@@ -38,18 +38,19 @@ $http = new linkobject();
 $db = new mysql(DBHOST, DBUSER, DBPASS, DBNAME);
 // create session class object
 $sess = new session($http, $db);
-
-require_once 'db_conf.php'; //import database configuration
-
-//create and output http object from linkobject class
-$http = new linkobject();
-//create database object
-$db =new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
-//create session object
-$sess = new session ($http, $db);
-
 //language support
-$lang_id = DEFAULT_LANG;
-$http-> set('lang_id',$lang_id);
+// site used langs
 
+$siteLangs = array (
+    'et' => 'estonian',
+    'en' => 'english',
+    'ru' => 'russian'
+);
+
+//get lang_id from url
+$lang_id = $http->get('lang_id');
+if (!isset($siteLangs[$lang_id])){
+    $lang_id =DEFAULT_LANG;// use default lang - et
+    $http -> set('lang_id',$lang_id); // fix used lang_id
+}
 ?>
