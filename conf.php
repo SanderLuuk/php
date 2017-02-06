@@ -38,4 +38,18 @@ $http = new linkobject();
 $db = new mysql(DBHOST, DBUSER, DBPASS, DBNAME);
 // create session class object
 $sess = new session($http, $db);
+
+require_once 'db_conf.php'; //import database configuration
+
+//create and output http object from linkobject class
+$http = new linkobject();
+//create database object
+$db =new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
+//create session object
+$sess = new session ($http, $db);
+
+//language support
+$lang_id = DEFAULT_LANG;
+$http-> set('lang_id',$lang_id);
+
 ?>
