@@ -10,11 +10,13 @@ define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
 define('STYLE_DIR', 'css/');
 define('ACTS_DIR', 'acts/'); // default act directory
-define('LIB_DIR','lib/');
+define('LIB_DIR', 'lib/');
 
 define('DEFAULT_ACT', 'default'); // default act file name
 // import useful files
 require_once LIB_DIR.'utils.php';
+
+define('DEFAULT_ACT', 'default'); //default act file name
 //user roles
 define('ROLE_NONE', 0);
 define('ROLE_ADMIN', 1);
@@ -50,7 +52,9 @@ $siteLangs = array (
 //get lang_id from url
 $lang_id = $http->get('lang_id');
 if (!isset($siteLangs[$lang_id])){
-    $lang_id =DEFAULT_LANG;// use default lang - et
+    $lang_id = DEFAULT_LANG;// use default lang - et
     $http -> set('lang_id',$lang_id); // fix used lang_id
 }
+define('LANG_ID', $lang_id); // define useful constant which describe right now active lang
+
 ?>
