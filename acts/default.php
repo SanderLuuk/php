@@ -1,4 +1,6 @@
 <?php
+
+
 $page_id = $http->get('page_id'); // get page_id from url
 // get page content from database according to page_id
 $sql = 'SELECT * FROM content WHERE '.

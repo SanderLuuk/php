@@ -11,12 +11,11 @@ define('TMPL_DIR', 'tmpl/');
 define('STYLE_DIR', 'css/');
 define('ACTS_DIR', 'acts/'); // default act directory
 define('LIB_DIR', 'lib/');
+define('LANG_DIR', 'lang/');
 
 define('DEFAULT_ACT', 'default'); // default act file name
 // import useful files
 require_once LIB_DIR.'utils.php';
-
-define('DEFAULT_ACT', 'default'); //default act file name
 //user roles
 define('ROLE_NONE', 0);
 define('ROLE_ADMIN', 1);
@@ -30,9 +29,9 @@ require_once CLASSES_DIR.'template.php'; // import template class file
 require_once CLASSES_DIR.'http.php'; // import http class file
 require_once CLASSES_DIR.'linkobject.php'; // import linkobject file
 require_once CLASSES_DIR.'mysql.php'; // import database class file
-require_once CLASSES_DIR.'session.php'; // import session class file
 // import database configuration
 require_once 'db_conf.php';
+require_once CLASSES_DIR.'session.php'; // import session class file
 // objects
 // create linkobject object, because it extends http object
 $http = new linkobject();
@@ -41,7 +40,8 @@ $db = new mysql(DBHOST, DBUSER, DBPASS, DBNAME);
 // create session class object
 $sess = new session($http, $db);
 //language support
-// site used langs
+//language support
+//sites used langs
 
 $siteLangs = array (
     'et' => 'estonian',
@@ -51,7 +51,7 @@ $siteLangs = array (
 
 //get lang_id from url
 $lang_id = $http->get('lang_id');
-if (!isset($siteLangs[$lang_id])){
+if(!isset($siteLangs[$lang_id])){
     $lang_id = DEFAULT_LANG;// use default lang - et
     $http -> set('lang_id',$lang_id); // fix used lang_id
 }

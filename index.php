@@ -7,21 +7,21 @@
  */
 //import comnfiguration
 require_once 'conf.php';
+// load template file content
+$tmpl = new Template('main');
 //import act description
 require_once 'act.php';
 //create and template object
 // and use it
 // create an template object,
 // set up the file name for template
-// load template file content
-$tmpl = new template('main');
 
-require_once(BASE_DIR.'lang.php');
 
+require_once 'lang.php';
 // add pairs of temlate element names and real values
 $tmpl->set('style', STYLE_DIR.'main'.'.css');
 $tmpl->set('title', 'title');
-// menu testing
+// menu testinga
 // import menu file
 require_once 'menu.php';
 $tmpl->set('menu', $menu->parse());
@@ -29,12 +29,12 @@ $tmpl->set('menu', $menu->parse());
 //importing act file
 
 require_once 'act.php';
+$tmpl ->set('Lang_bar', LANG_ID);
+$tmpl->set('Nav_bar', $sess->user_data['username']);
 
 // end of menu
-$tmpl->set('Nav_bar', 'Minu navigatsioon');
-$tmpl->set('Lang_bar', 'Minu keeleriba');
-$tmpl->set('Nav_bar', $sess->user_data['username']);
-$tmpl->set('lang_bar',LANG_ID);
+//$tmpl->set('Nav_bar', 'Minu navigatsioon');
+//$tmpl->set('Lang_bar', 'Minu keeleriba');
 //$tmpl->set('content', 'minu sisu');
 // allow to use default act
 //$tmpl->set('content', $http->get('content'));
@@ -51,11 +51,11 @@ $res = $db->getArray($sql);
 // control query log output
 $db->showHistory();
 //control session output
-echo '<pre>';
-print_r($sess);
-echo '</pre>';
+//echo '<pre>';
+//print_r($sess);
+//echo '</pre>';
 
-$sess->clearSessions();
+//$sess->clearSessions();
 //Session flush id
 $sess->flush();
 ?>

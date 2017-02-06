@@ -28,9 +28,9 @@ if($res != false)
     foreach ($res as $page)
     {
         //add content to menu item
-        $item->set('name',$page['title']);
         $link = $http->getLink(array('page_id'=>$page['content_id']));
         $item->set('link', $link);
+        $item-> set('name', $page['title']);
         //add item to menu
         $menu->add('items', $item->parse());
 
