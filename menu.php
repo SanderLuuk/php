@@ -9,14 +9,22 @@
 // create menu and item objects
 //for menu and menu items
 $menu = new template('menu.menu'); //in menu directory is file menu.html menu/menu.html
+$menu->set('items', false); // if user is not loged in , then he/she does not see.
 $item = new template('menu.item');
 //main meny content query
 $sql = 'SELECT content_id, title from content where '.
     'parent_id="0" and show_in_menu="1"';
-$sql = $sql.'order by sort asc';
-//get menu data from database
-$res = $db->getArray($sql);
-//create menu items from query result
+// allowing to show to the user only content what is allowed , if hidden is 1 - then only seeable to admins.
+if(ROLE_ID != ROLE_ADMIN) {
+    $sql .= ' AND is_hidden = 0';
+}
+$sql .? ' ORDER BY sort ASC';//get menu data from database
+
+$res = $db->getArray($sql); //create menu items from query result
+
+}
+
+
 if($res != false){
     foreach ($res as $page){
         //add content to menu item

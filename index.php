@@ -40,7 +40,6 @@ $res = $db->getArray($sql);
 //Session flush id
 $sess->flush();
 
-
 // control query log output
 $db->showHistory();
 //control session output

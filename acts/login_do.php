@@ -1,4 +1,5 @@
 <?php
+
 $username = $http->get('username');
 $password = $http->get('password');
 
@@ -13,6 +14,7 @@ if ($res === false){
 }
 else{
     $sess->createSession($res[0]);
+    $http->redirect();
     //now we have to redirect to index.php
 }
 

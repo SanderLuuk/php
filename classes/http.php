@@ -64,15 +64,18 @@ class http
         }
     }
 
-    function redirect($url=false){
+    function redirect($url=false)
+    {
         global $sess;
         $sess->flush();
 
-        if($url == false){
+        if($url == false)
+        {
             $url = $this->getLink();
         }
         $url = str_replace('&amp;', '&', $url);
         header('Location;'.$url);
         exit;
-    }// http class end
+    }
+} // http class end
 ?>
